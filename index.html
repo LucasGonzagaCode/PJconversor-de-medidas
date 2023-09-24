@@ -7,43 +7,48 @@
     <title>Conversor de Unidades</title>
 </head>
 <body>
+    <div class="formulario">
     <form action="#">
-        <h1>Conversor de Unidades</h1>
-
+        <div class="f-titulo">
+            <h1>Conversor de Unidades</h1>
+        </div>
+        <div class="f-entrada">
         <p>Digite a quantidade:</p>
         <input type="number" id="quantidade" name="quantidade">
-
-        <br>
+        </div>
+        <div class="f-tipos">
 
         <label for="tipos">De:</label>
-        <select name="tipos" id="tiposDe">
+        <select name="tipos" id="valDe">
             <option value="none"></option>
             <option value="quilometro">Quilômetro(s)</option>
             <option value="metro">Metro(s)</option>
             <option value="centimetro">Centímetro(s)</option>
             <option value="milimetro">Milímetro(s)</option>
         </select>
-
-        <br>
 
         <label for="tipos">Para:</label>
-        <select name="tipos" id="tiposPara">
+        <select name="tipos" id="valPara">
             <option value="none"></option>
             <option value="quilometro">Quilômetro(s)</option>
             <option value="metro">Metro(s)</option>
             <option value="centimetro">Centímetro(s)</option>
             <option value="milimetro">Milímetro(s)</option>
         </select>
+    </div>
 
-        <br>
-
-        <input id="button" type="button" value="Converter" onclick="converter()">
-        <input type="button" value="Limpar" onclick="">
-
+    <div class="f-botoes">
+        <input id="button" type="button" value="Converter" onclick="Converter()">
+        <input type="reset" value="Limpar" onclick="Clear()">
+</div>
+<div class="f-saida">
         <p>Resultado:</p>
         <p id="resultado"></p>
         <p id="explicacao"></p>
+</div>
     </form>
+</div>
+
     <script src="js/conversor.js"></script>
 </body>
 </html>

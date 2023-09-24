@@ -1,71 +1,83 @@
+//Início da função "Converter"
+const Converter = () => {
+//Declaração de variáveis
+const qtd = parseFloat(document.querySelector('#quantidade').value);
 
-let val = document.querySelector('#quantidade')
+const de = document.querySelector('#valDe').value
+const para = document.querySelector('#valPara').value
 
-let opt1 = document.querySelector('#tiposDe') 
-opt1.addEventListener('click',converter)
-
-let opt2 = document.querySelector('#tiposPara')
-opt2.addEventListener('click',converter)
-
-let button = document.querySelector('#button')
-let resul
-
+let resul;
+let conversor = de  +','+ para
 //
-function converter() {
+//Estrutura de decisão
+switch(conversor){
+    //quilometro
+    case 'quilometro,quilometro':
+        resul = qtd
+    break;
+    case 'quilometro,metro':
+        resul = qtd * 1000
+    break;
+    case 'quilometro,centimetro':
+        resul = qtd * 100000
+    break;
+    case 'quilometro,milimetro':
+        resul = qtd * 1000000
+    break;
 
-    const valorDe = opt1.value
-    const valorPara = opt2.value
-    const value = val.value
+    //metro
+    case 'metro,quilometro':
+        resul = qtd / 1000
+    break;
+    case 'metro,metro':
+        resul = qtd
+    break;
+    case 'metro,centimetro':
+        resul = qtd * 100
+    break;
+    case 'metro,milimetro':
+        resul = qtd * 1000
+    break;
 
-    const calculos = {
-        nm1:0,
-        convKM: (value) => {
-        this.nm1=value
-        return(parseFloat(this.nm1) * 1000)
-        },
-        convM: (value) => {
-        this.nm1=value
-        return(parseFloat(this.nm1) * 100)
-        },
-        convCM: (value) => {
-        this.nm1=value
-        return(parseFloat(this.nm1) / 100)
-        },
-        convMM: (value) => {
-        this.nm1=value
-        return(parseFloat(this.nm1) / 1000)
-        }   
-    }
+    //centimetro
+    case 'centimetro,quilometro':
+        resul = qtd / 100000
+    break;
+    case 'centimetro,metro':
+        resul = qtd / 100
+    break;
+    case 'centimetro,centimetro':
+        resul = qtd
+    break;
+    case 'centimetro,milimetro':
+        resul = qtd * 10
+    break;
 
-    switch(valorDe){
-        case "quilometro":
-           resul = value*1000
-            break;
-        case "metro":
-            resul = calculos.convM(value)
-            break;
-        case "centimetro":
-            resul = calculos.convKM(value)
-            break;
-        case "milimetro":
-            resul = calculos.convKM(value)
-            break;
-    }
-
-    switch(valorPara){
-        case "quilometro":
-            resul = calculos.convKM(value)
-            break;
-        case "metro":
-            resul = value * 100
-            break;
-        case "centimetro":
-            resul = calculos.convKM(value)
-            break;
-        case "milimetro":
-            resul = valorPara / 1000
-            break;
-    }
-    document.getElementById('resultado').innerHTML=resul
+    //milimetro
+    case 'milimetro,quilometro':
+        resul = qtd / 1000000
+    break;
+    case 'milimetro,metro':
+        resul = qtd / 1000
+    break;
+    case 'milimetro,centimetro':
+        resul = qtd / 10
+    break;
+    case 'milimetro,milimetro':
+        resul = qtd
+    break;
 }
+//
+//Saída de dados
+    document.querySelector('#resultado').innerHTML=resul
+//
+//
+}
+//Fim da função "Converter"
+
+//Início da função "Clear"
+const Clear = () => {
+    document.querySelector('#resultado').innerHTML=''
+}
+//Fim da função "Clear"
 

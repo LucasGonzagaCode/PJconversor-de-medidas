@@ -1,9 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #143d59;
 }
-form{
-    margin-top: 5%;
+body{
+    background-image: url(../img/fundo-texturizado-abstrato.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
     text-align: center;
+}
+.formulario{
+    background-color: #f4b41a;
+    color: aliceblue;
+    width: 40%;
+    height: 400px;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.formulario .f-titulo{
+    margin-top: 5%;
+}
+.formulario .f-entrada{
+    margin-top: 5%;
+    text-transform: uppercase;
+}
+.formulario .f-entrada input{
+    width: 50%;
+    background-color: #143d59;
+    border-style: solid;
+    color: aliceblue;
+    text-align: center;
+}
+.formulario .f-tipos{
+    margin-top: 5%;
+    font-size: 25px;
+}
+.formulario .f-tipos select{
+   width: 40%;
+   display: block;
+   margin: auto;
+   background-color: #143d59;
+   color: aliceblue;
+   text-align: center;
+}
+.formulario .f-tipos select option{
+    color: aliceblue;
+}
+.formulario .f-botoes{
+    margin-top: 5%;
+}
+.formulario .f-botoes input{
+    padding: 2%;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 12%;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    background-color: #143d59;
+    color: aliceblue;
+}
+.formulario .f-saida{
+    margin-top: 5%;
+    font-size: 25px;
 }
